@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barrio Secure</title>
+
+<style>
+body{
+    margin:0;
+    background:#111827;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.card{
+    width:90%;
+    max-width:360px;
+    background:#1f2937;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,0,0,.4);
+}
+button{
+    width:100%;
+    padding:18px;
+    background:#ff0000;
+    color:white;
+    border:none;
+    border-radius:15px;
+    font-size:22px;
+    cursor:pointer;
+}
+#estado{
+    margin-top:20px;
+    text-align:left;
+    line-height:1.8;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>🛡️ Barrio Secure</h1>
+<p>Tu seguridad en un solo toque.</p>
+
+<button onclick="activarAlarma()">
+🚨 ACTIVAR ALARMA
+</button>
+
+<div id="estado">
+Sistema listo.
+</div>
+
+<audio id="sirena">
+<source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg">
+</audio>
+
+</div>
+
+<script>
+
+function activarAlarma(){
+
+document.getElementById("sirena").play();
+
+document.getElementById("estado").innerHTML=`
+<h2 style="color:red;">🚨 ¡ALARMA ACTIVADA!</h2>
+
+<p>📍 Ubicación compartida correctamente.</p>
+
+<p>👤 Contacto de emergencia:</p>
+<b>María Pérez</b>
+
+<p>📲 Enviando alerta...</p>
+
+<p style="color:lime;">
+✅ Notificación enviada correctamente.
+</p>
+
+<p>👥 Vecinos alertados.</p>
+
+<p>🚓 Autoridades notificadas.</p>
+
+<p>🕒 Hora: ${new Date().toLocaleTimeString()}</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
